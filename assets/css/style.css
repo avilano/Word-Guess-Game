@@ -1,0 +1,103 @@
+body {
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif; }
+
+.btn-primary {
+    font-family: 'Indie Flower', cursive;
+    text-align: center;
+    padding: 30px;
+    font-size: 45px;
+    background-color: #f00f80;
+    border-color: #e5e90ce7;
+  }
+
+.btn-primary:active, .btn-primary:focus, .btn-primary:hover {
+
+    background-color: #4aaaa5;
+    border-color: #4aaaa5;
+
+    color: white;
+  }
+
+  header.masthead {
+    text-align: center;
+    color: white;
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  header.masthead  {
+    padding-top: 200px;
+    padding-bottom: 200px;
+  }
+  
+  header.masthead  .intro-lead-in {
+    font-size: 42px;
+    font-style: italic;
+    line-height: 40px;
+    margin-bottom: 25px;
+    Color: black;
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  header.masthead  {
+    font-size: 50px;
+    font-weight: 700;
+    line-height: 50px;
+    margin-bottom: 25px;
+    font-family: 'Indie Flower', cursive;
+    
+  }
+
+
+footer {
+    padding: 25px 0;
+    text-align: center;
+    background-color: #212529;
+    color: white;
+  }
+  
+  footer span.copyright {
+    font-size: 90%;
+    line-height: 40px;
+    text-transform: none;
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  footer ul.quicklinks {
+    font-size: 90%;
+    line-height: 40px;
+    margin-bottom: 0;
+    text-transform: none;
+    font-family: 'Indie Flower', cursive;
+  }
+  
+  ul.social-buttons {
+    margin-bottom: 0;
+  }
+  
+  ul.social-buttons li a {
+    font-size: 30px;
+    line-height: 40px;
+    display: block;
+    width: 40px;
+    height: 40px;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    color: white;
+    border-radius: 100%;
+    outline: none;
+    background-color: #ec09a8;
+  }
+  
+  ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons li a:hover {
+    background-color: #fed136;
+  }
+  
