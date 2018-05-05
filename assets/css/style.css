@@ -1,5 +1,5 @@
 body {
-    overflow-x: hidden;
+    overflow-x: auto;
     font-family: 'Montserrat', sans-serif; }
 
 .btn-primary {
@@ -39,7 +39,8 @@ body {
     padding-bottom: 200px;
   }
   
-  header.masthead  .intro-lead-in {
+
+  header.masthead  .intro-lead-in{
     font-size: 42px;
     font-style: italic;
     line-height: 40px;
@@ -47,6 +48,7 @@ body {
     Color: black;
     font-family: 'Indie Flower', cursive;
   }
+
   
   header.masthead  {
     font-size: 50px;
@@ -59,7 +61,7 @@ body {
 
   .image_to_guess{
     position:absolute;
-    left: 30%;
+    right:40%;
     top:20%;
     visibility: hidden;
     width: 250px;
@@ -113,3 +115,14 @@ footer {
     background-color: #fed136;
   }
   
+  .navbar {
+    font-size: 55px;
+    font-weight: bolder;
+    right: 0;
+    padding-top: 50px;
+    text-transform: uppercase;
+    color: white;
+    border: 0;
+    font-family: 'Indie Flower', cursive;
+    visibility: hidden;
+  }

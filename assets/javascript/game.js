@@ -15,13 +15,13 @@ var messages = {
 }
 var availableLetters;
 var letterClicked = ["."];
-var messages;
 var alreadyGuessed;
-var brandName = [{name:"Elmer Fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"Squidward Tentacles", image:"45.jpeg"}];
+var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"squidward tentacles", image:"45.jpeg"}];
 
 
 
 function startGame(){
+    document.getElementById("top").style.visibility= 'visible';
     document.getElementById("outputError").innerText= messages.instructions;
     availableLetters = [" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     lives = 10;
@@ -29,10 +29,10 @@ function startGame(){
     answer =[];
     randomBrand();
     createAnswer();
-    showImages();
     start = true;
     document.getElementById("startGame").style.visibility = 'hidden';
     document.getElementById("title_header").style.visibility = 'hidden';
+
 }
 
 document.onkeyup = function(event) {
@@ -44,22 +44,27 @@ document.onkeyup = function(event) {
 function checkScores(){
     if(alreadyGuessed == toGuess.length){
         printLives(messages.win);
-        document.getElementById("startGame").style.visibility = 'visible';
+        resetElements();
         start=false; 
         score++;
     }
     if(lives === 0){
         printLives(messages.lose);
-        document.getElementById("startGame").style.visibility = 'visible';
+        resetElements();
         start=false; 
         score--;
     }
 }
 
-function showImages(){
+function resetElements(){
+    document.getElementById("startGame").style.visibility = 'visible';
+    document.getElementById("imageGuess").style.visibility = 'hidden';
+    document.getElementById("title_header").innerText= 'Do you want to play again?';
+    document.getElementById("title_header").style.visibility = 'visible';
+    document.getElementById("top").style.visibility= 'hidden';
+
 
 }
-
 
 function hangman(letter){
     //is the key a valid letter? 

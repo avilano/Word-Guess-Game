@@ -3,9 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>TV Show HangMan</title>
+    <title>Cartoon Hangman</title>
     
    <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
@@ -24,16 +22,21 @@
 
   </head>
   <body>
+       <!-- Top Bar-->
+       <nav class="fixed-top" id="mainNav">
+          <div class="container">
+            <a class="navbar" id= "top" href="#page-top">Who am I?</a>
+          </div>
+        </nav>
         
         <!-- Header -->
         <header class="masthead">
           <div class="container">
-              <img class ="image_to_guess" id="imageGuess"src= "">
             <div class="intro-text">
+              <img class ="image_to_guess" id="imageGuess"src= "">
               <div class="intro-lead-in" id="title_header">Can you guess the name of these cartoon characters?!</div>
-              <a class="btn btn-primary btn-xl text-uppercase" onclick=startGame() id = "startGame" >Start Playing</a>
+              <a class="btn btn-primary btn-xl text-uppercase" onclick=startGame() id = "startGame" href="#game">Start Playing</a>
             </div>
-
           </div>
         </header>
 
