@@ -4,7 +4,6 @@ var lives ;
 var start = false;
 var toGuess = "";//random Brand to guess
 var answer =[]; //empty array
-var brandName = ["pepsi", "procter and gamble", "unilever", "apple", "samsung", "susuki"];
 var messages = {
     correct: 'Correct!',
     incorrect: 'Incorrect!',
@@ -18,6 +17,8 @@ var availableLetters;
 var letterClicked = ["."];
 var messages;
 var alreadyGuessed;
+var brandName = [{name:"Elmer Fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"Squidward Tentacles", image:"45.jpeg"}];
+
 
 
 function startGame(){
@@ -28,11 +29,10 @@ function startGame(){
     answer =[];
     randomBrand();
     createAnswer();
+    showImages();
     start = true;
     document.getElementById("startGame").style.visibility = 'hidden';
     document.getElementById("title_header").style.visibility = 'hidden';
-
-
 }
 
 document.onkeyup = function(event) {
@@ -55,6 +55,11 @@ function checkScores(){
         score--;
     }
 }
+
+function showImages(){
+
+}
+
 
 function hangman(letter){
     //is the key a valid letter? 
@@ -84,7 +89,10 @@ function hangman(letter){
 
     //Call this function when start of new word
 function randomBrand(){
-    toGuess = brandName[Math.floor(Math.random() * brandName.length)];
+    var selection = Math.floor(Math.random() * brandName.length);
+    toGuess = brandName[selection].name;
+    document.getElementById("imageGuess").src = "assets/images/" + brandName[selection].image;
+    document.getElementById("imageGuess").style.visibility = 'visible';
     console.log(toGuess);
 }
         

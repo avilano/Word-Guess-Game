@@ -28,10 +28,12 @@
         <!-- Header -->
         <header class="masthead">
           <div class="container">
+              <img class ="image_to_guess" id="imageGuess"src= "">
             <div class="intro-text">
               <div class="intro-lead-in" id="title_header">Can you guess the name of these cartoon characters?!</div>
               <a class="btn btn-primary btn-xl text-uppercase" onclick=startGame() id = "startGame" >Start Playing</a>
             </div>
+
           </div>
         </header>
 
@@ -43,11 +45,11 @@
           </div>
         </div>
         <div class="row">
-          <div class="col-lg-2 text-center">
+          <div class="col-lg-2">
           </div>
           <div class="col-lg-8 text-center">
             <h3 class="section-subheading text-muted "><span id="updateScreen"><strong> </strong></span></h3>
-            <h3 class="section-subheading text-muted "><span id="outputError"><strong></strong></span></h3>
+            <h3 class="section-subheading text-muted errorDisplay"><span id="outputError"><strong></strong></span></h3>
           </div>
         </div> 
       </div> 

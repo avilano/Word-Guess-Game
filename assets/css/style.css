@@ -12,10 +12,8 @@ body {
   }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-
     background-color: #4aaaa5;
     border-color: #4aaaa5;
-
     color: white;
   }
 
@@ -30,6 +28,10 @@ body {
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+  }
+
+  h3.errorDisplay{
+    font-family: 'Indie Flower', cursive;
   }
   
   header.masthead  {
@@ -55,6 +57,16 @@ body {
     
   }
 
+  .image_to_guess{
+    position:absolute;
+    left: 30%;
+    top:20%;
+    visibility: hidden;
+    width: 250px;
+    height: 350px; 
+   
+    
+  }
 
 footer {
     padding: 25px 0;
