@@ -18,6 +18,8 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
     <!-- Custom styles -->
     <link href="assets/css/style.css" rel="stylesheet">
+    <!-- For the scoreboard -->
+    <link rel="stylesheet" href="assets/css/odometer-theme-slot-machine.css" />
    
 
   </head>
@@ -28,6 +30,11 @@
             <a class="navbar" id= "top" href="#page-top">Who am I?</a>
           </div>
         </nav>
+
+         <!-- scoreboard-->
+         <div class="scoreboard">Score<br>
+            <div class = "odometer" id = "scoreupdate"></div>
+          </div>
         
         <!-- Header -->
         <header class="masthead">
@@ -35,7 +42,7 @@
             <div class="intro-text">
               <img class ="image_to_guess" id="imageGuess"src= "">
               <div class="intro-lead-in" id="title_header">Can you guess the name of these cartoon characters?!</div>
-              <a class="btn btn-primary btn-xl text-uppercase" onclick=startGame() id = "startGame" href="#game">Start Playing</a>
+              <a class="btn btn-primary btn-xl text-uppercase col-md-7" onclick=startGame() id = "startGame" href="#game">Start Playing</a>
             </div>
           </div>
         </header>
@@ -51,7 +58,7 @@
           <div class="col-lg-2">
           </div>
           <div class="col-lg-8 text-center">
-            <h3 class="section-subheading text-muted "><span id="updateScreen"><strong> </strong></span></h3>
+            <h3 class="section-subheading text-muted result "><span id="updateScreen"><strong> </strong></span></h3>
             <h3 class="section-subheading text-muted errorDisplay"><span id="outputError"><strong></strong></span></h3>
           </div>
         </div> 
@@ -97,5 +104,7 @@
 
     <!-- Custom scripts  -->
     <script src="assets/javascript/game.js"></script>
+    <script src="assets/javascript/odometer.min.js"></script>
+
 </body>
 </html>

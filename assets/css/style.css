@@ -1,12 +1,13 @@
 body {
     overflow-x: auto;
-    font-family: 'Montserrat', sans-serif; }
+    font-family: 'Montserrat', sans-serif;
+ }
 
 .btn-primary {
     font-family: 'Indie Flower', cursive;
     text-align: center;
     padding: 30px;
-    font-size: 45px;
+    font-size: 40px;
     background-color: #f00f80;
     border-color: #e5e90ce7;
   }
@@ -30,8 +31,10 @@ body {
     background-size: cover;
   }
 
-  h3.errorDisplay{
+  #outputError{
     font-family: 'Indie Flower', cursive;
+    background-color: #f00f80;
+    color: white;
   }
   
   header.masthead  {
@@ -49,7 +52,7 @@ body {
     font-family: 'Indie Flower', cursive;
   }
 
-  
+
   header.masthead  {
     font-size: 50px;
     font-weight: 700;
@@ -65,9 +68,7 @@ body {
     top:20%;
     visibility: hidden;
     width: 250px;
-    height: 350px; 
-   
-    
+    height: 350px;  
   }
 
 footer {
@@ -116,13 +117,32 @@ footer {
   }
   
   .navbar {
+    position: relative;;
     font-size: 55px;
     font-weight: bolder;
-    right: 0;
+    left: 0;
     padding-top: 50px;
     text-transform: uppercase;
-    color: white;
+    color: black;
     border: 0;
     font-family: 'Indie Flower', cursive;
     visibility: hidden;
+  }
+
+  .scoreboard{
+      position:fixed;
+      font-size: 35px;
+      color: white;
+      font-weight: bolder;
+      top:5%;
+      right:19%;
+      width: 50px;
+      height: 40px;
+
+  }
+
+  #updateScreen{
+    font-size: 45px;
+    color: black;
+    line-height: 40px;
   }

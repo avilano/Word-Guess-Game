@@ -1,4 +1,4 @@
- //Global Variable
+//Global Variable
 var score = 0;
 var lives ;
 var start = false;
@@ -16,14 +16,18 @@ var messages = {
 var availableLetters;
 var letterClicked = ["."];
 var alreadyGuessed;
-var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"squidward tentacles", image:"45.jpeg"}];
-
+var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"squidward tentacles", image:"45.jpeg"},
+{name:"sylvester", image:"1.jpg"},{name:"homer simpson", image:"2.jpg"},{name:"mickey mouse", image:"3.jpg"},{name:"rocky", image:"4.jpg"},{name:"wile e coyote", image:"5.jpg"},
+,{name:"spongebob", image:"6.jpg"},{name:"eric cartman", image:"7.jpg"},{name:"daffy duck", image:"8.jpg"},{name:"porky pig", image:"9.jpg"},{name:"brian", image:"19.jpg"},{name:"betty boop", image:"12.jpg"},
+{name:"pongo", image:"32.jpg"},{name:"casper", image:"28.jpg"},{name:"bender", image:"38.jpg"},{name:"pepe le pew", image:"37.jpg"}, {name:"baloo", image:"18.jpg"},{name:"velma", image:"10.jpg"},
+{name:"optimus prime", image:"11.jpg"},{name:"ren", image:"13.jpg"}];
+var audio = new Audio('assets/audio/looney_tunes.mp3');
 
 
 function startGame(){
     document.getElementById("top").style.visibility= 'visible';
     document.getElementById("outputError").innerText= messages.instructions;
-    availableLetters = [" ","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
+    availableLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
     lives = 10;
     alreadyGuessed=0;
     answer =[];
@@ -32,7 +36,7 @@ function startGame(){
     start = true;
     document.getElementById("startGame").style.visibility = 'hidden';
     document.getElementById("title_header").style.visibility = 'hidden';
-
+    audio.pause();
 }
 
 document.onkeyup = function(event) {
@@ -47,13 +51,17 @@ function checkScores(){
         resetElements();
         start=false; 
         score++;
+        audio.play();
+
     }
     if(lives === 0){
         printLives(messages.lose);
         resetElements();
         start=false; 
         score--;
+        audio.play();
     }
+    document.getElementById("scoreupdate").innerText= score;
 }
 
 function resetElements(){
@@ -62,8 +70,6 @@ function resetElements(){
     document.getElementById("title_header").innerText= 'Do you want to play again?';
     document.getElementById("title_header").style.visibility = 'visible';
     document.getElementById("top").style.visibility= 'hidden';
-
-
 }
 
 function hangman(letter){
@@ -105,7 +111,11 @@ function randomBrand(){
 function createAnswer(){
     for (var i = 0; i < toGuess.length; i++) {
             answer[i] = " _ ";
+    if (toGuess.charAt(i) === " ") {
+            answer[i]="   ";
+            alreadyGuessed++;
         }
+    }
     printAnswer();
 }
 
@@ -118,7 +128,7 @@ function printAnswer(){
 }
 
 function printLives(text){
-    document.getElementById("outputError").innerText =text + " Lives: " + lives;
+    document.getElementById("outputError").innerText =text + "  - Lives: " + lives;
 }
 
 
@@ -128,7 +138,7 @@ function existInWord(letter){
         result = true;
         for (var i = 0; i < toGuess.length; i++) {
                 if (toGuess.charAt(i) === letter) {
-                    answer[i]=letter;
+                    answer[i]=letter.toUpperCase();
                     alreadyGuessed++;
                 }
         }
