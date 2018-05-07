@@ -31,9 +31,9 @@ function startGame(){
     lives = 10;
     alreadyGuessed=0;
     answer =[];
-    setElements();
     randomBrand();
     createAnswer();
+    setElements();
     start = true;
     audio.pause(); //when you win or when you lose sound
 }
