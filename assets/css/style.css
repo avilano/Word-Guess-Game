@@ -21,40 +21,43 @@ body {
 
 header.masthead {
   text-align: center;
-  background-image: url("../images/background.jpg");
+  background-image: url("../images/background.png");
   background-repeat: no-repeat;
   background-attachment: scroll;
   background-position: center center;
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+  background-color: #212529;
 }
 
 #outputError{
-  font-family: 'Indie Flower', cursive;
   background-color: #f00f80;
-  color: white;
-}
-
-header.masthead  {
-  padding-top: 200px;
-  padding-bottom: 200px;
-}
-
-
-header.masthead  .intro-lead-in{
+  display:block;
+  color: #e5e90ce7;
+  font-family: 'Amatic SC', cursive;
   font-size: 42px;
-  min-width: 300;
-  font-style: italic;
+}
+
+.intro-lead-in{
+  font-size: 42px;
   line-height: 40px;
+  text-align: center;
   margin-bottom: 25px;
   Color: black;
   font-family: 'Amatic SC', cursive;
 }
 
+.answeris{
+  font-size: 22px;
+  font-family: 'Amatic SC', cursive;
+  visibility: hidden;
+}
+
+.answeris:active, .answeris:focus, .answeris:hover {
+  background-color: yellow;
+}
 
 header.masthead  {
+  padding-top: 200px;
+  padding-bottom: 200px;
   font-size: 50px;
   font-weight: 700;
   line-height: 50px;
@@ -65,7 +68,7 @@ header.masthead  {
 .image_to_guess{
   position:absolute;
   right:40%;
-  top:20%;
+  top:13%;
   visibility: hidden;
   width: 300px;
   height: 350px;  
@@ -116,13 +119,12 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
   background-color: #fed136;
 }
   
-.navbar {
+.soon {
   position: relative;
-  font-size: 55px;
+  font-size: 35px;
   font-weight: bolder;
-  left: 10%;
+  left: 0%;
   bottom: 0%;
-  text-transform: uppercase;
   color: black;
   border: 0;
   font-family: 'Indie Flower', cursive;
@@ -153,6 +155,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     width: 300px;
     height: 350px;  
     left:30px;
+    top:18%;
   }
   .scoreboard{
     position:absolute;

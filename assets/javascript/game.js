@@ -14,6 +14,7 @@ var messages = {
     instructions: 'Please press the desired key'
 }
 var availableLetters;
+var audio = new Audio('assets/audio/looney_tunes.mp3'); 
 var letterClicked = ["."];//inicialiazed with . dt not able to make it work with an empty array. Keeps track of the pressed keys
 var alreadyGuessed;//counter of letters al ready guessed - Adds without typing spaces.
 var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"squidward tentacles", image:"45.jpeg"},
@@ -21,8 +22,6 @@ var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"
 ,{name:"spongebob", image:"6.jpg"},{name:"eric cartman", image:"7.jpg"},{name:"daffy duck", image:"8.jpg"},{name:"porky pig", image:"9.jpg"},{name:"brian", image:"19.jpg"},{name:"betty boop", image:"12.jpg"},
 {name:"pongo", image:"32.jpg"},{name:"casper", image:"28.jpg"},{name:"bender", image:"38.jpg"},{name:"pepe le pew", image:"37.jpg"}, {name:"baloo", image:"18.jpg"},{name:"velma", image:"10.jpg"},
 {name:"optimus prime", image:"11.jpg"},{name:"ren", image:"13.jpg"}];
-var audio = new Audio('assets/audio/looney_tunes.mp3'); //when you win or when you lose sound
-
 /*
  * Function called by button in hmtl. Makes the buttons hide while the user guess the image.
  * Resets the available letters array and all other counters
@@ -36,6 +35,7 @@ function startGame(){
     randomBrand();
     createAnswer();
     start = true;
+    audio.pause(); //when you win or when you lose sound
 }
 /*
  * default screen layout to start playing
@@ -46,7 +46,8 @@ function setElements(){
     document.getElementById("outputError").innerText= messages.instructions;
     document.getElementById("startGame").style.visibility = 'hidden';
     document.getElementById("title_header").style.visibility = 'hidden';
-    audio.pause();
+    document.getElementById("tai").style.visibility= 'visible';
+
 }
 /*
  * Called everytime user presses a key
@@ -69,6 +70,7 @@ function checkScores(){
         start=false; 
         score++;
         audio.play();
+        audio.currentTime = 0;
 
     }
     if(lives === 0){
@@ -130,7 +132,7 @@ function randomBrand(){
     toGuess = brandName[selection].name;
     document.getElementById("imageGuess").src = "assets/images/" + brandName[selection].image;
     document.getElementById("imageGuess").style.visibility = 'visible';
-    console.log(toGuess);
+    //console.log(toGuess);
 }
         
 /**
@@ -154,11 +156,11 @@ function createAnswer(){
 function printAnswer(){
     var print = " ";
     for (var i = 0; i < answer.length; i++) {
-        print = print.concat(answer[i]);
+        print = print.concat(answer[i].toUpperCase());
     }
     document.getElementById("updateScreen").innerText = print;
 }
-
+ 
 /*
  * Function call to display Lives and error messages. 
  * Used by createAnswer() and hangman()
@@ -185,7 +187,17 @@ function existInWord(letter){
     return result;
 }
 
+/*
+ * Function that searches inside the to be guessed word if the letter clicked is there
+ * @returns bool 
+ */
+function displayAnswer(){
+    answer = toGuess;
+    lives = 0;
+    printAnswer();
+    checkScores();
 
+}
 
 
 
