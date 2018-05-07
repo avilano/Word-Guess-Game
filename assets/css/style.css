@@ -7,20 +7,20 @@ body {
   font-family: 'Indie Flower', cursive;
   text-align: center;
   padding: 30px;
+  color:white;
   font-size: 40px;
   background-color: #f00f80;
   border-color: #e5e90ce7;
 }
 
 .btn-primary:active, .btn-primary:focus, .btn-primary:hover {
-  background-color: #4aaaa5;
-  border-color: #4aaaa5;
-  color: white;
+  background-color: yellow;
+  border-color: #f00f80;;
+  color: black;
 }
 
 header.masthead {
   text-align: center;
-  color: white;
   background-image: url("../images/background.jpg");
   background-repeat: no-repeat;
   background-attachment: scroll;
@@ -45,11 +45,12 @@ header.masthead  {
 
 header.masthead  .intro-lead-in{
   font-size: 42px;
+  min-width: 300;
   font-style: italic;
   line-height: 40px;
   margin-bottom: 25px;
-  Color:black;
-  font-family: 'Indie Flower', cursive;
+  Color: black;
+  font-family: 'Amatic SC', cursive;
 }
 
 
