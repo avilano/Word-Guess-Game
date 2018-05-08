@@ -1,6 +1,6 @@
 
 var score = 0;
-var lives ;
+var lives = 10;
 var start = false;
 var toGuess = "";//random Cartoon name to guess
 var answer =[]; //empty array with answer
@@ -28,7 +28,6 @@ var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"
  */
 function startGame(){
     availableLetters = ["a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-    lives = 10;
     alreadyGuessed=0;
     answer =[];
     randomBrand();
@@ -80,6 +79,7 @@ function checkScores(){
         start=false; 
         score--;
         audio.play();
+        lives = 10;
     }
     document.getElementById("scoreupdate").innerText= score;
 }
@@ -159,7 +159,7 @@ function printAnswer(){
     for (var i = 0; i < answer.length; i++) {
         print = print.concat(answer[i].toUpperCase());
     }
-    document.getElementById("updateScreen").innerText = print;
+    document.getElementById("updateScreen").innerText = " Name: " + print;
 }
  
 /*
