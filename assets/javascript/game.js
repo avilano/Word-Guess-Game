@@ -189,15 +189,15 @@ function existInWord(letter){
 }
 
 /*
- * Function that searches inside the to be guessed word if the letter clicked is there
- * @returns bool 
+ * If you dont guess... you lose
  */
 function displayAnswer(){
+    if(start){
     answer = toGuess;
     lives = 0;
     printAnswer();
     checkScores();
-
+    } 
 }
 
 
