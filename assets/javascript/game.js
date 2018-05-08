@@ -15,6 +15,8 @@ var messages = {
 }
 var availableLetters;
 var audio = new Audio('assets/audio/looney_tunes.mp3'); 
+var error = new Audio('assets/audio/beep.mp3'); 
+
 var letterClicked = ["."];//inicialiazed with . dt not able to make it work with an empty array. Keeps track of the pressed keys
 var alreadyGuessed;//counter of letters al ready guessed - Adds without typing spaces.
 var brandName = [{name:"elmer fudd", image:"47.jpeg"},{name:"buttercup", image:"46.png"},{name:"squidward tentacles", image:"45.jpeg"},
@@ -112,13 +114,16 @@ function hangman(letter){
             else{
                 lives--;
                 printLives(messages.incorrect);
+                error.play();
             }
     }else if(letterClicked.indexOf(letter)!==-1){
         lives--;
-        printLives(messages.guessed);   
+        printLives(messages.guessed); 
+        error.play();  
     }else{
         lives--;
         printLives(messages.validLetter);
+        error.play();
     }
     checkScores();
 
