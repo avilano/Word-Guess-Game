@@ -140,7 +140,7 @@ ul.social-buttons li a:active, ul.social-buttons li a:focus, ul.social-buttons l
     font-weight: bolder;
     top:5%;
     right:19%;
-    width: 50px;
+    width: 120px;
     height: 40px;
     z-index: 100;
 }

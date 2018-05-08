@@ -134,7 +134,7 @@ function hangman(letter){
  */
 
 function randomBrand(){
-    var selection = Math.floor(Math.random() * brandName.length);
+    var selection = Math.floor(Math.random() * brandName.length + 1);
     toGuess = brandName[selection].name;
     document.getElementById("imageGuess").src = "assets/images/" + brandName[selection].image;
     document.getElementById("imageGuess").style.visibility = 'visible';
