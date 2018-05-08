@@ -36,6 +36,7 @@ function startGame(){
     setElements();
     start = true;
     audio.pause(); //when you win or when you lose sound
+    audio.currentTime = 0;
 }
 /*
  * default screen layout to start playing
